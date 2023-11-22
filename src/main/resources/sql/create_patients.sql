@@ -1,0 +1,10 @@
+create table patients(
+	id SERIAL PRIMARY KEY NOT NULL,
+	sureName VARCHAR(255) NOT NULL,
+	name VARCHAR(255) NOT NULL,
+	age INTEGER NOT NULL,
+	isHealthy boolean NOT NULL,
+	address VARCHAR(255),
+	doctor_id INTEGER REFERENCES employees (id) ON DELETE CASCADE ON UPDATE CASCADE,
+	ward_id INTEGER REFERENCES wards (id) ON DELETE CASCADE ON UPDATE CASCADE
+);
