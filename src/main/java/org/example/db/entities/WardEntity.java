@@ -64,6 +64,10 @@ public class WardEntity {
         return patients;
     }
 
+    public boolean isFull() {
+        return isFull;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

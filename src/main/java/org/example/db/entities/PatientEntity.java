@@ -104,13 +104,13 @@ public class PatientEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PatientEntity that = (PatientEntity) o;
-        return Objects.equals(id, that.id);
+        PatientEntity patient = (PatientEntity) o;
+        return isHealthy == patient.isHealthy && Objects.equals(id, patient.id) && Objects.equals(sureName, patient.sureName) && Objects.equals(name, patient.name) && Objects.equals(age, patient.age) && Objects.equals(address, patient.address) && Objects.equals(ward, patient.ward) && Objects.equals(doctor, patient.doctor);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(id, sureName, name, age, isHealthy, address, ward, doctor);
     }
 
     @Override
